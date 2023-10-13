@@ -1,16 +1,18 @@
 import express, { Application } from "express";
 import { mainApp } from "./mainApp";
 import mongoose from "mongoose";
+import env from "dotenv";
+env.config()
 
-const port: number = 4455;
+const port: number = parseInt(process.env.PORT!);
 
-const url:string= "mongodb+srv://akinolajsh:akinolajsh@akinolajsh.jtoox53.mongodb.net/SustainDB?retryWrites=true&w=majority"
+const url:string= process.env.DATABASE!
 
 const app: Application = express();
 
 mainApp(app);
 
-const server = app.listen( port, () => {
+const server = app.listen( process.env.PORT || port, () => {
   mongoose.connect(url).then(() => {
     console.log("connected...🚀🚀🚀");
   });
