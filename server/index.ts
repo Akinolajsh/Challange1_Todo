@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 const port: number = 4455;
 
-const url:string= "mongodb://127.0.0.1:27017/TodoDB"
+const url:string= "mongodb+srv://akinolajsh:akinolajsh@akinolajsh.jtoox53.mongodb.net/SustainDB?retryWrites=true&w=majority"
 
 const app: Application = express();
 
